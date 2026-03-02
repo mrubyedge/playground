@@ -152,9 +152,9 @@ dependencies = [
 
 [[package]]
 name = "mruby-compiler2-sys"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9e57b6bea7a439d4a48c5e2d680104b99855404caa0e24a30febe5bbee176f25"
+checksum = "e521a8e2c0b4d22ee0755f54c68029f0763b83128f08d148755eb3c0901bbeea"
 dependencies = [
  "bindgen",
  "cc",
@@ -175,9 +175,9 @@ dependencies = [
 
 [[package]]
 name = "mrubyedge"
-version = "1.1.8"
+version = "1.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f6637cd859a862100009f116830b1b1f6e932633d574c24480ba57983e208567"
+checksum = "8196b89b47357c9d189abfdcb6024b0842817d089742cb127f5a223c11592a2b"
 dependencies = [
  "plain",
  "rand_core",
@@ -188,18 +188,18 @@ dependencies = [
 
 [[package]]
 name = "mrubyedge-math"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7faac1fa8bf95e7f02ca71824aebf139ed1dd20696e42e8e1c4cb8374dde2dbe"
+checksum = "94ab341d1a13e87a66cde9725f0a2f15a2e88c806b7995d9eb69968f4162fa45"
 dependencies = [
  "mrubyedge",
 ]
 
 [[package]]
 name = "mrubyedge-serde-json"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c51a1b5516aee35d6f4271fa86e77aa9a0a20fd3b7a3a5ee0acaaab7364adf62"
+checksum = "7ae563f43f788c3fdc7553de60f74780afca2501ebbbb75663661a28be703c93"
 dependencies = [
  "mrubyedge",
  "serde",
@@ -208,9 +208,9 @@ dependencies = [
 
 [[package]]
 name = "mrubyedge-time"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "583821a12194d23b55bf1fb9051d5559c9ca3481b8bf285693a20debf11fb093"
+checksum = "143c9c3b434a5c16e206d2cb18917f8b6a8e035259b01029a2c7f9196a9642ec"
 dependencies = [
  "libc",
  "mrubyedge",
@@ -313,9 +313,9 @@ dependencies = [
 
 [[package]]
 name = "regex-syntax"
-version = "0.8.9"
+version = "0.8.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a96887878f22d7bad8a3b6dc5b7440e0ada9a245242924394987b21cf2210a4c"
+checksum = "dc897dd8d9e8bd1ed8cdad82b5966c3e0ecae09fb1907d58efaa013543185d0a"
 
 [[package]]
 name = "rustc-hash"
@@ -396,21 +396,21 @@ checksum = "e6e4313cd5fcd3dad5cafa179702e2b244f760991f45397d14d4ebf38247da75"
 
 [[package]]
 name = "uzumibi-art-router"
-version = "0.2.0"
+version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b9d5e6ee90979802b77229a87d04524e63f2e21586d2d0d1a1aaa7897ad29d41"
+checksum = "2595159ffa880e72349e47144a2536fba3093ffe8ba4967e9793e9b2bbdc22a0"
 dependencies = [
  "mrubyedge",
 ]
 
 [[package]]
 name = "uzumibi-gem"
-version = "0.4.1"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c50111f13a66ee21fd71026abfa5da491d42db54d51eb455af7972c160c7a2c6"
+checksum = "36ff06f79411d85957eac5bbe96e982a757122a7fcde1c7e77ee7de27d22abdc"
 dependencies = [
- "mruby-serde-json",
  "mrubyedge",
+ "mrubyedge-serde-json",
  "uzumibi-art-router",
 ]
 

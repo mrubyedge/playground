@@ -4,15 +4,15 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-mrubyedge = { version = "1.1.8", default-features = false, features = [
+mrubyedge = { version = "1.1.9", default-features = false, features = [
     "wasi",
     "mruby-regexp",
     "mruby-random",
     "insn-limit",
 ] }
-mrubyedge-serde-json = "0.1.0"
-mrubyedge-math = "0.1.0"
-mrubyedge-time = "0.1.1"
+mrubyedge-serde-json = "0.1.1"
+mrubyedge-math = "0.1.1"
+mrubyedge-time = "0.1.2"
 
 [build-dependencies]
 bindgen = ">= 0"
