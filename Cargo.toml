@@ -31,4 +31,4 @@ strip = true      # Strip symbols
 panic = "abort"   # Reduce panic handling overhead
 
 [workspace]
-members = ["apps_script", "mrbe-playground-api/wasm-app"]
+members = ["mrbe-playground-api/wasm-app"]

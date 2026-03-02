@@ -12,16 +12,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "apps_script"
-version = "0.1.0"
-dependencies = [
- "bindgen",
- "cc",
- "glob",
- "mrubyedge",
-]
-
-[[package]]
 name = "bindgen"
 version = "0.72.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
