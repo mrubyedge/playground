@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Write and execute Ruby in your browser with mruby/edge and WebAssembly. Save and share code from the playground.">
+    <meta name="theme-color" content="#17141f">
+    <link rel="canonical" href="https://mrubyedge.github.io/playground/">
     <title>mruby/edge Playground</title>
-    <link rel="icon" type="image/x-icon" href="https://mrubyedge.github.io/playground/favicon.ico">
+    <link rel="icon" href="https://mrubyedge.github.io/assets/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="https://mrubyedge.github.io/assets/favicon.ico">
 
     <!-- OGP Meta Tags -->
     <meta property="og:title" content="mruby/edge Playground">
@@ -14,6 +19,8 @@
     <meta property="og:image" content="https://mrubyedge.github.io/playground/ogp.png">
     <meta property="og:url" content="https://mrubyedge.github.io/playground/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="mruby/edge">
+    <meta property="og:image:alt" content="mruby/edge Playground">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -21,6 +28,7 @@
     <meta name="twitter:description"
         content="Write and execute mruby code in your browser. An interactive playground powered by mruby/edge and WebAssembly.">
     <meta name="twitter:image" content="https://mrubyedge.github.io/playground/ogp.png">
+    <meta name="twitter:image:alt" content="mruby/edge Playground">
 
     <style>
         * {
@@ -598,73 +606,125 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="site.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <div class="header-left">
-                    <h1>💻 mruby/edge Playground</h1>
-                    <div class="subtitle">Write and execute mruby code in your browser</div>
-                </div>
-                <div class="header-buttons">
-                    <button id="infoBtn" class="info-btn">ℹ️ Version Info</button>
-                    <button id="releaseNotesBtn" class="release-notes-btn">📺 Latest Releases</button>
-                </div>
+    <a class="skip-link" href="#playground">Skip to playground</a>
+
+    <nav class="shell" aria-label="Primary navigation">
+        <a class="wordmark" href="https://mrubyedge.github.io/" aria-label="mruby/edge home">
+            <span class="mark" aria-hidden="true">/</span>
+            mruby/edge
+        </a>
+        <ul class="nav-links">
+            <li><a href="#playground">Playground</a></li>
+            <li><a href="https://github.com/mrubyedge/mrubyedge">Runtime</a></li>
+            <li><a href="https://github.com/mrubyedge/playground">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero shell" id="top">
+        <div>
+            <p class="eyebrow">mruby-compatible · In-browser · WebAssembly</p>
+            <h1>Try Ruby at the <span>edge.</span></h1>
+            <p class="lede">
+                Compile and run Ruby entirely in your browser with mruby/edge.
+                Start from a preset, inspect the console, then save a shareable link.
+            </p>
+            <div class="actions">
+                <a class="button button-primary" href="#playground">Start coding</a>
+                <a class="button button-secondary" href="https://github.com/mrubyedge/playground">View source</a>
             </div>
         </div>
+        <div class="terminal" aria-label="Ruby playground example">
+            <div class="terminal-bar" aria-hidden="true"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div>
+            <pre><code><span class="prompt">ruby&gt;</span> [1, 2, 3].map { |n| n * 2 }
+<span class="output">=&gt; [2, 4, 6]</span>
 
-        <div class="editor-panel">
-            <div class="editor-controls">
-                <label for="codeInput">💎 Ruby Code:</label>
-                <select id="presetSelect">
-                    <option value="">-- Load Sample Code --</option>
-                    <option value="hello">Hello World</option>
-                    <option value="fibonacci">Fibonacci Numbers</option>
-                    <option value="hanoi">Tower of Hanoi</option>
-                    <option value="sine">Sine Curve</option>
-                    <option value="janken">Janken Game</option>
-                    <option value="json">JSON Parse Sample</option>
-                </select>
+<span class="prompt">ruby&gt;</span> RUBY_ENGINE
+<span class="output">=&gt; "mruby/edge"</span></code></pre>
+        </div>
+    </header>
+
+    <main>
+        <section class="shell playground-section" id="playground">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Browser playground</p>
+                    <h2>Write. Run.<br>Share.</h2>
+                </div>
+                <p>
+                    The editor runs locally through WebAssembly. Saved snippets receive a shareable URL through
+                    the playground API.
+                </p>
             </div>
-            <textarea id="codeInput"
-                placeholder="# Enter your mruby code here&#x0a;puts 'Hello, mruby!'&#x0a;&#x0a;x = [1, 2, 3, 4, 5]&#x0a;x.map { |n| n * 2 }">puts 'Hello, mruby!'
+
+            <div class="container">
+                <div class="header">
+                    <div class="header-content">
+                        <div class="header-left">
+                            <p class="workbench-label">mruby/edge Playground</p>
+                            <h3>Ruby editor</h3>
+                            <div class="subtitle">A small mruby environment, ready in your browser.</div>
+                        </div>
+                        <div class="header-buttons">
+                            <button id="infoBtn" class="info-btn">Version</button>
+                            <button id="releaseNotesBtn" class="release-notes-btn">Latest releases</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="editor-panel">
+                    <div class="editor-controls">
+                        <label for="codeInput">Ruby code</label>
+                        <select id="presetSelect">
+                            <option value="">Load sample code…</option>
+                            <option value="hello">Hello World</option>
+                            <option value="fibonacci">Fibonacci Numbers</option>
+                            <option value="hanoi">Tower of Hanoi</option>
+                            <option value="sine">Sine Curve</option>
+                            <option value="janken">Janken Game</option>
+                            <option value="json">JSON Parse Sample</option>
+                        </select>
+                    </div>
+                    <textarea id="codeInput"
+                        placeholder="# Enter your mruby code here&#x0a;puts 'Hello, mruby!'&#x0a;&#x0a;x = [1, 2, 3, 4, 5]&#x0a;x.map { |n| n * 2 }">puts 'Hello, mruby!'
 [1, 2, 3].map { |x| x * 2 }</textarea>
-            <div class="button-group">
-                <button id="runButton">▶ Run Code</button>
-                <button id="saveButton">💾 Save Code</button>
-                <button id="resetButton">🗑 Reset</button>
-            </div>
-        </div>
+                    <div class="button-group">
+                        <button id="runButton">Run code</button>
+                        <button id="saveButton">Save code</button>
+                        <button id="resetButton">Reset</button>
+                    </div>
+                </div>
 
-        <div class="console-panel">
-            <div class="console-header">
-                <span class="console-title">📋 Console Output</span>
-                <button id="clearButton">Clear</button>
+                <div class="console-panel">
+                    <div class="console-header">
+                        <span class="console-title">Console</span>
+                        <button id="clearButton">Clear console</button>
+                    </div>
+                    <div id="console">
+                        <div class="console-prompt">Ready. Press “Run code” to execute your mruby script.</div>
+                    </div>
+                </div>
             </div>
-            <div id="console">
-                <div class="console-prompt">Ready. Press "Run Code" to execute your mruby script.</div>
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <footer class="footer">
-        <p>
-            Powered by <a href="https://github.com/mrubyedge/mrubyedge" target="_blank"
-                rel="noopener noreferrer">mruby/edge</a>
-            |
-            <a href="https://github.com/mrubyedge/playground" target="_blank" rel="noopener noreferrer">🔗 View
-                playground code on GitHub</a>
-        </p>
+    <footer class="footer shell">
+        <p>Powered by <a href="https://github.com/mrubyedge/mrubyedge">mruby/edge</a> and WebAssembly.</p>
+        <p><a href="https://github.com/mrubyedge/playground">Playground source ↗</a></p>
     </footer>
 
     <!-- Release Notes Modal -->
     <div id="releaseNotesModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>📺 Latest Releases</h2>
-                <button class="close-btn" id="closeModal">&times;</button>
+                <div>
+                    <p class="eyebrow">From GitHub</p>
+                    <h2>Latest releases</h2>
+                </div>
+                <button class="close-btn" id="closeModal" aria-label="Close release notes">&times;</button>
             </div>
             <div id="releaseNotesContent">
                 <div class="loading">Loading release notes...</div>
@@ -676,8 +736,11 @@
     <div id="versionInfoModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>ℹ️ Version Information</h2>
-                <button class="close-btn" id="closeVersionModal">&times;</button>
+                <div>
+                    <p class="eyebrow">Runtime details</p>
+                    <h2>Version information</h2>
+                </div>
+                <button class="close-btn" id="closeVersionModal" aria-label="Close version information">&times;</button>
             </div>
             <div id="versionInfoContent">
                 <div class="loading">Loading version information...</div>
@@ -715,7 +778,7 @@
             const saveButton = document.getElementById('saveButton');
 
             saveButton.disabled = true;
-            saveButton.textContent = '💾 Saving...';
+            saveButton.textContent = 'Saving…';
 
             try {
                 const payload = {
@@ -747,7 +810,7 @@
                 appendToConsole(`Failed to save code: ${error.message}`, 'error');
             } finally {
                 saveButton.disabled = false;
-                saveButton.textContent = '💾 Save Code';
+                saveButton.textContent = 'Save code';
             }
         }
 
