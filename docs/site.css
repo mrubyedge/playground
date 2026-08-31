@@ -477,12 +477,13 @@ label,
     min-height: 25rem;
     max-height: 31rem;
     padding: 1.1rem;
-    overflow-y: auto;
+    overflow: auto;
     color: #f8f3ed;
     background: #151219;
     border: 1px solid #4a4452;
     border-radius: 0.6rem;
     font: 0.78rem/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    scrollbar-color: #51495d #151219;
 }
 
 .console-system,
@@ -490,8 +491,8 @@ label,
 .console-error,
 .console-prompt {
     margin: 0.2rem 0;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
+    white-space: pre;
+    overflow-wrap: normal;
 }
 
 .console-system {
@@ -515,6 +516,7 @@ label,
 
 #console::-webkit-scrollbar {
     width: 8px;
+    height: 8px;
 }
 
 #console::-webkit-scrollbar-track {
