@@ -97,9 +97,12 @@ nav {
     background: var(--ruby);
     border-radius: 0.55rem 0.55rem 0.55rem 0.15rem;
     box-shadow: 0.22rem 0.22rem 0 var(--ink);
-    font-size: 1rem;
-    font-style: italic;
-    font-weight: 800;
+}
+
+.mark svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
 }
 
 .nav-links {
